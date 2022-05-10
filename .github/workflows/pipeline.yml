@@ -30,6 +30,8 @@ jobs:
       # Run Unit tests - Specify unit tests here
       - run: npm install      
       - run: npm test
+      - run: rm -rf ./__tests__
+      - run: npm prune --production
 
       - uses: aws-actions/setup-sam@v1
       - uses: aws-actions/configure-aws-credentials@v1

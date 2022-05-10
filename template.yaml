@@ -12,6 +12,11 @@ Description: >-
 Transform:
 - AWS::Serverless-2016-10-31
 
+# Skip creating the default Stage
+Globals:
+  Api:
+    OpenApiVersion: 3.0.1
+
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
 Resources:

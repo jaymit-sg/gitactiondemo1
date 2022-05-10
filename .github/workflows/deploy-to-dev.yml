@@ -46,8 +46,9 @@ jobs:
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
-      - name: Package Cleanup
+      - name: cleanup test files
         run: rm -rf ./__tests__
+      - name: npm prune
         run: npm prune --production
       - name: Setup sam action
         uses: aws-actions/setup-sam@v1

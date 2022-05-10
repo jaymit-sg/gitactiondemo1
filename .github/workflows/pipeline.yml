@@ -35,7 +35,10 @@ jobs:
       # sam build
       - run: sam build --use-container
 
-      # Run Unit tests- Specify unit tests here
+      # Run Unit tests - Specify unit tests here
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
 
       # sam deploy
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-cicd-demo --s3-bucket sam-cicd-demo-bucket --capabilities CAPABILITY_IAM --region ap-south-1

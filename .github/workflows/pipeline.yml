@@ -36,8 +36,7 @@ jobs:
       - run: sam build --use-container
 
       # Run Unit tests - Specify unit tests here
-      - run: npm install
-      - run: npm run build --if-present
+      - run: npm install      
       - run: npm test
 
       # sam deploy

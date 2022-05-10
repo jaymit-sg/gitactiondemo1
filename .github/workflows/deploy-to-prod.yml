@@ -1,7 +1,8 @@
 name: Deploy To PROD
 
 on:
-  push:
+  # only manual deployments
+  workflow_dispatch:
     branches:
       - master
 

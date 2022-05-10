@@ -26,6 +26,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
+
+      # Run Unit tests - Specify unit tests here
+      - run: npm install      
+      - run: npm test
+
       - uses: aws-actions/setup-sam@v1
       - uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -33,11 +38,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
       # sam build
-      - run: sam build --use-container
-
-      # Run Unit tests - Specify unit tests here
-      - run: npm install      
-      - run: npm test
+      - run: sam build --use-container      
 
       # sam deploy
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-cicd-demo --s3-bucket sam-cicd-demo-bucket --capabilities CAPABILITY_IAM --region ap-south-1

@@ -57,4 +57,4 @@ jobs:
       - name: Sam Build
         run: sam build --use-container
       - name: Sam Deploy
-        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-cicd-demo-${{ env.STAGE }} --s3-bucket sam-cicd-demo-bucket --capabilities CAPABILITY_IAM --region ${{ env.AWS_REGION }}
+        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-cicd-demo-${{ env.STAGE }} --s3-bucket sam-cicd-demo-bucket-${{ env.STAGE }} --capabilities CAPABILITY_IAM --region ${{ env.AWS_REGION }}

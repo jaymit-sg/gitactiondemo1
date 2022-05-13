@@ -22,6 +22,10 @@ Globals:
 Resources:
   # Each Lambda function is defined by properties:
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Test
 
   # This is a Lambda function config associated with the source code: get-all-items.js
   getAllItemsFunction:
